@@ -1,4 +1,4 @@
-DIRS = ExBMC ExTrees ExPhylo ExModels
+DIRS = ExBMC ExTrees ExPhylo
 MAKE = make
 BIOPP_PATH = /tmp/bpp-crash-test/.local
 
