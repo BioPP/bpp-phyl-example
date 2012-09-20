@@ -20,7 +20,7 @@ int main()
   try {
     const ProteicAlphabet* alphabet = new ProteicAlphabet();
     Phylip* seqReader = new Phylip(false, false);
-    SiteContainer* sites = seqReader->read("Myoglobin.phy", alphabet);
+    SiteContainer* sites = seqReader->readAlignment("Myoglobin.phy", alphabet);
     cout << "Number of sequences in alignment:      " <<  sites->getNumberOfSequences() << endl;
     cout << "Number of sites in alignment:          " <<  sites->getNumberOfSites() << endl;
     SiteContainer* completeSites = SiteContainerTools::getSitesWithoutGaps(* sites);

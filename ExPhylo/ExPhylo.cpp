@@ -144,7 +144,7 @@ int main(int args, char ** argv)
      * We wil now use these models to build a distance matrix and a BioNJ tree:
      */
     Fasta seqReader;
-    SequenceContainer* sequences = seqReader.read("SSU.fasta", &AlphabetTools::RNA_ALPHABET);
+    SequenceContainer* sequences = seqReader.readSequences("SSU.fasta", &AlphabetTools::RNA_ALPHABET);
     SiteContainer* sites = new VectorSiteContainer(*sequences);
     delete sequences;
     cout << "There are " << sites->getNumberOfSites() << " positions in the alignment." << endl;
@@ -207,7 +207,7 @@ int main(int args, char ** argv)
     unsigned int numberOfSites = 500;
     SiteContainer* simSites = simulator->simulate(numberOfSites);
     Fasta seqWriter;
-    seqWriter.write("Simulations.fasta", *simSites);
+    seqWriter.writeAlignment("Simulations.fasta", *simSites);
 
     /* ----------------
      * QUESTION 4: Assess some properties of the model using simulations (parametric bootstrap)
