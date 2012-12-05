@@ -138,7 +138,7 @@ int main(int args, char ** argv)
      * They are also Parametrizable object, and so share a lot of methods with SubstitutionModel objects.
      * They are used here for modeling rate across site heterogeneity, but we will consider a Constant distribution for now:
      */
-    DiscreteDistribution* rateDist = new ConstantDistribution(1., true);
+    DiscreteDistribution* rateDist = new ConstantDistribution(1.);
 
     /*
      * We wil now use these models to build a distance matrix and a BioNJ tree:
