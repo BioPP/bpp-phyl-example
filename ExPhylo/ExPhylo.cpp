@@ -50,7 +50,6 @@ using namespace std;
 /*
  * From Bpp-Core:
  */
-#include <Bpp/Numeric/Prob.all> /* include all probability distributions */
 #include <Bpp/App.all>
 
 /*
@@ -138,7 +137,7 @@ int main(int args, char ** argv)
      * They are also Parametrizable object, and so share a lot of methods with SubstitutionModel objects.
      * They are used here for modeling rate across site heterogeneity, but we will consider a Constant distribution for now:
      */
-    DiscreteDistribution* rateDist = new ConstantDistribution(1.);
+    DiscreteDistribution* rateDist = new ConstantRateDistribution();
 
     /*
      * We wil now use these models to build a distance matrix and a BioNJ tree:
@@ -204,7 +203,7 @@ int main(int args, char ** argv)
      */
     TreeTemplate<Node>* mlTreeTT = new TreeTemplate<Node>(mlTree); 
     HomogeneousSequenceSimulator* simulator = new HomogeneousSequenceSimulator(model, rateDist, mlTreeTT); 
-    unsigned int numberOfSites = 500;
+    size_t numberOfSites = 500;
     SiteContainer* simSites = simulator->simulate(numberOfSites);
     Fasta seqWriter;
     seqWriter.writeAlignment("Simulations.fasta", *simSites);

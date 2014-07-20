@@ -3,7 +3,6 @@
 #include <Bpp/Seq/Container.all>
 #include <Bpp/Seq/Io.all>     
 #include <Bpp/Seq/DistanceMatrix.h>
-#include <Bpp/Numeric/Prob.all>
 #include <Bpp/Phyl/TreeTemplate.h>
 #include <Bpp/Phyl/Io.all>
 #include <Bpp/Phyl/Model.all>
@@ -28,8 +27,7 @@ int main()
     delete sites;
     SubstitutionModel* model = new JTT92(alphabet);
     DiscreteDistribution* rateDist = 
-        new GammaDiscreteDistribution(4, 0.5);
-    rateDist->aliasParameters("alpha", "beta");
+        new GammaDiscreteRateDistribution(4, 0.5);
     cout << "Estimating distance matrix..." << endl; 
     DistanceEstimation distEstimation(model,
         rateDist, completeSites);
