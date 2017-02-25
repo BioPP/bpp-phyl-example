@@ -31,26 +31,24 @@ using namespace std;
 /*
  * From Bpp-Seq:
  */
-#include <Bpp/Seq/Alphabet.all>  /* this includes all alphabets in one shot */
-#include <Bpp/Seq/Container.all> /* this includes all containers */
-#include <Bpp/Seq/Io.all>        /* this includes all sequence readers and writers */
+#include <Bpp/Seq/Alphabet/AlphabetTools.h>  /* this includes all alphabets in one shot */
+#include <Bpp/Seq/Container/VectorSiteContainer.h>
+#include <Bpp/Seq/Container/SiteContainerTools.h>
+#include <Bpp/Seq/Io/Fasta.h>
 
 /*
  * From Bpp-Phyl:
  */
 #include <Bpp/Phyl/Tree.h> /* this includes classes for tree manipulations */
 #include <Bpp/Phyl/TreeTools.h>
-#include <Bpp/Phyl/Io.all>
-#include <Bpp/Phyl/Model.all> /* this includes all models */
-#include <Bpp/Phyl/Distance.all>
-#include <Bpp/Phyl/Likelihood.all>
+#include <Bpp/Phyl/Io/Newick.h>
+#include <Bpp/Phyl/Model/Nucleotide/K80.h>
+#include <Bpp/Phyl/Model/RateDistribution/ConstantRateDistribution.h>
+#include <Bpp/Phyl/Distance/DistanceEstimation.h>
+#include <Bpp/Phyl/Distance/BioNJ.h>
+#include <Bpp/Phyl/Likelihood/NNIHomogeneousTreeLikelihood.h>
 #include <Bpp/Phyl/OptimizationTools.h>
-#include <Bpp/Phyl/Simulation.all>
-
-/*
- * From Bpp-Core:
- */
-#include <Bpp/App.all>
+#include <Bpp/Phyl/Simulation/HomogeneousSequenceSimulator.h>
 
 /*
  * All Bio++ functions are also in a namespace, so we'll use it:

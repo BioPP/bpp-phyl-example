@@ -33,7 +33,7 @@ using namespace std;
  */
 #include <Bpp/Phyl/Tree.h>
 #include <Bpp/Phyl/TreeTemplate.h>
-#include <Bpp/Phyl/Io.all>
+#include <Bpp/Phyl/Io/Newick.h>
 
 using namespace bpp;
 

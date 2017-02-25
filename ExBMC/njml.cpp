@@ -1,11 +1,12 @@
 #include <Bpp/Exceptions.h>
-#include <Bpp/Seq/Alphabet.all>
-#include <Bpp/Seq/Container.all>
-#include <Bpp/Seq/Io.all>     
+#include <Bpp/Seq/Alphabet/AlphabetTools.h>
+#include <Bpp/Seq/Container/SiteContainerTools.h>
+#include <Bpp/Seq/Io/Phylip.h>     
 #include <Bpp/Seq/DistanceMatrix.h>
 #include <Bpp/Phyl/TreeTemplate.h>
-#include <Bpp/Phyl/Io.all>
-#include <Bpp/Phyl/Model.all>
+#include <Bpp/Phyl/Io/Newick.h>
+#include <Bpp/Phyl/Model/Protein/JTT92.h>
+#include <Bpp/Phyl/Model/RateDistribution/GammaDiscreteRateDistribution.h>
 #include <Bpp/Phyl/Distance/DistanceEstimation.h>
 #include <Bpp/Phyl/Distance/NeighborJoining.h>
 #include <Bpp/Phyl/Likelihood/RHomogeneousTreeLikelihood.h>
@@ -60,8 +61,14 @@ int main()
     Newick newick;
     newick.write(likFunction->getTree(), "output.dnd");
     
-    delete alphabet, seqReader, completeSites, model,
-        rateDist, tree, matrix, likFunction;
+    delete alphabet;
+    delete seqReader;
+    delete completeSites;
+    delete model;
+    delete rateDist;
+    delete tree;
+    delete matrix;
+    delete likFunction;
   }
   catch (Exception & e)
   {
