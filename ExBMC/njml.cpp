@@ -64,8 +64,6 @@ int main()
     delete alphabet;
     delete seqReader;
     delete completeSites;
-    delete model;
-    delete rateDist;
     delete tree;
     delete matrix;
     delete likFunction;
